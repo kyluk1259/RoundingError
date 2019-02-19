@@ -9,9 +9,7 @@ import javax.swing.*;
 import java.math.*;
 
 /**
- * Kyle Lukaszek 
- * 2/18/19 
- * Rounding Error Program
+ * Kyle Lukaszek 2/18/19 Rounding Error Program
  */
 public class RoundingError {
 
@@ -21,21 +19,26 @@ public class RoundingError {
     public static void main(String[] args) {
         //variable initialization for input, sqrt, sqr, and difference
         double input, sqrt, sqr, diff;
+        while (true) {
+            //initialize question window
+            String numStr = JOptionPane.showInputDialog("Please enter a number");
+            try {
+                //convert input into double
+                input = Double.parseDouble(numStr);
+                //initialize sqrt, sqr, diff
+                sqrt = Math.sqrt(input);
+                sqr = Math.pow(sqrt, 2);
+                diff = sqr - input;
+                //initialize output window
+                JOptionPane.showMessageDialog(null, "The square of the squareroot = " + sqr + "\nThe round off error = " + diff);
+                //End program after clicking ok on the answer screen
+                System.exit(0);
+            } catch (NumberFormatException ne) {
+                //reopen input window when a number is not inputted
+                JOptionPane.showInputDialog("Please enter a number");
 
-        //initialize question window
-        String numStr = JOptionPane.showInputDialog("Please enter a number");
-
-        //convert input into double
-        input = Double.parseDouble(numStr);
-
-        //initialize sqrt, sqr, diff
-        sqrt = Math.sqrt(input);
-        sqr = Math.pow(sqrt, 2);
-        diff = sqr - input;
-
-        //initialize output window
-        JOptionPane.showMessageDialog(null, "The square of the squareroot = " + sqr + "\nThe round off error = " + diff);
+            }
+        }
 
     }
-
 }
