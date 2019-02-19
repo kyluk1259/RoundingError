@@ -7,9 +7,11 @@ package roundingerror;
 
 import javax.swing.*;
 import java.math.*;
+
 /**
- *
- * @author Kyle's PC
+ * Kyle Lukaszek 
+ * 2/18/19 
+ * Rounding Error Program
  */
 public class RoundingError {
 
@@ -17,22 +19,23 @@ public class RoundingError {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        double first, sqrt, sqr, diff;
+        //variable initialization for input, sqrt, sqr, and difference
+        double input, sqrt, sqr, diff;
+
         //initialize question window
         String numStr = JOptionPane.showInputDialog("Please enter a number");
-        
+
         //convert input into double
-        first = Double.parseDouble(numStr);
-        
+        input = Double.parseDouble(numStr);
+
         //initialize sqrt, sqr, diff
-        sqrt = Math.sqrt(first);
-        sqr = Math.pow(sqrt,2);
-        diff = sqr - first;
-        
+        sqrt = Math.sqrt(input);
+        sqr = Math.pow(sqrt, 2);
+        diff = sqr - input;
+
         //initialize output window
-               JOptionPane.showMessageDialog(null,"The square of the square = " + sqr + "\nThe round off error = " + diff);
+        JOptionPane.showMessageDialog(null, "The square of the squareroot = " + sqr + "\nThe round off error = " + diff);
 
     }
-    
+
 }
